@@ -1,12 +1,13 @@
-use env_logger::Env;
 use mail_newletter::configuration::get_configuration;
 use mail_newletter::startup::run;
+use mail_newletter::telemetry::{get_subscriber, init_subscriber};
 use sqlx::PgPool;
 use std::net::TcpListener;
 
 #[tokio::main]
 async fn main() -> Result<(), std::io::Error> {
-    env_logger::Builder::from_env(Env::default().default_filter_or("info")).init();
+    let subscriber = get_subscriber("mail_newsletter".into(), "info".into());
+    init_subscriber(subscriber);
 
     let configuration = get_configuration().expect("Failed to read configuration.");
     let connection_pool = PgPool::connect(&configuration.database.connection_string())
