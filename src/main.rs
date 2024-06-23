@@ -1,6 +1,6 @@
-use mail_newletter::configuration::get_configuration;
-use mail_newletter::startup::run;
-use mail_newletter::telemetry::{get_subscriber, init_subscriber};
+use mail_newsletter::configuration::get_configuration;
+use mail_newsletter::startup::run;
+use mail_newsletter::telemetry::{get_subscriber, init_subscriber};
 use secrecy::ExposeSecret;
 use sqlx::PgPool;
 use std::net::TcpListener;

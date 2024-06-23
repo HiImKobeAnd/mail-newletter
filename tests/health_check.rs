@@ -1,4 +1,4 @@
-use mail_newletter::{
+use mail_newsletter::{
     configuration::{get_configuration, DatabaseSettings},
     startup::run,
     telemetry::{get_subscriber, init_subscriber},
