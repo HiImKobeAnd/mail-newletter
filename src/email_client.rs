@@ -82,7 +82,7 @@ mod tests {
 
         let subscriber_email = SubscriberEmail::parse(SafeEmail().fake()).unwrap();
         let subject: String = Sentence(1..2).fake();
-        let content: String = Paragraph(1..0).fake();
+        let content: String = Paragraph(1..10).fake();
 
         Mock::given(any())
             .respond_with(ResponseTemplate::new(200))
