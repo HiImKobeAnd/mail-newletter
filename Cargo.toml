@@ -51,3 +51,7 @@ features = [
     "chrono",
     "migrate",
 ]
+
+[dev-dependencies]
+tokio = {version = "1", features = ["rt", "macros"]}
+wiremock = "0.5"
